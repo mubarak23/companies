@@ -17,13 +17,13 @@ class CreateContactsTable extends Migration
             $table->bigIncrements('id');
             $table->string('first_name');
             $table->string('lst_name');
-            $table->string('fun')->nullable();
+            $table->string('phone')->nullable();
             $table->string('email');
             $table->string('address');
             $table->unsignedBigInteger('company_id')->unsigned();
             $table->timestamps();
 
-            $table->foreign('company_id')->reference('id')->on('companies')->onscade();
+            $table->foreign('company_id')->reference('id')->on('companies')->onDelete('CASCADE');
         });
     }
 
