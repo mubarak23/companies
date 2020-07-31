@@ -20,10 +20,10 @@ class CreateContactsTable extends Migration
             $table->string('phone')->nullable();
             $table->string('email');
             $table->string('address');
-            $table->unsignedBigInteger('company_id')->unsigned();
+            $table->unsignedBigInteger('company_id');
             $table->timestamps();
 
-            $table->foreign('company_id')->reference('id')->on('companies')->onDelete('CASCADE');
+            $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
         });
     }
 
