@@ -15,17 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/contacts', function(){
-    return view('contact.index');
-})->name('contacts.index');
+Route::get('/contacts', 'ContactController@index')->name('contacts.index');
 
 
-Route::get('/contacts/create', function(){
-    return view('contact.create');
-})->name('contacts.create');
+Route::get('/contacts/create', 'ContactController@create')->name('contacts.create');
 
 
-Route::get('/contacts/{id}', function($id){
-    $contacts = App\Contact::find($id);
-    return view('contact.show', compact('contacts'));
-})->name('contacts.show');
+Route::get('/contacts/{id}', 'ContactController@show')->name('contacts.show');
