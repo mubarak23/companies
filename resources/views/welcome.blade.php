@@ -85,9 +85,9 @@
                 </div>
 
                 <div class="links">
-                    <a href="{{route('contact.index')}}">All Contacts</a>
-                    <a href="{{route('contact.create')}}">Add Contact</a>
-                    <a href="{{route('contact.show', 2)}}">Show a Contact</a>
+                    <a href="{{route('contacts.index')}}">All Contacts</a>
+                    <a href="{{route('contacts.create')}}">Add Contact</a>
+                    <a href="{{route('contacts.show', 2)}}">Show a Contact</a>
                 </div>
             </div>
         </div>

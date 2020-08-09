@@ -16,15 +16,16 @@ Route::get('/', function () {
 });
 
 Route::get('/contacts', function(){
-    return "<h3>All Contact </h3>";
-})->name('contact.index');
+    return view('contact.index');
+})->name('contacts.index');
 
 
 Route::get('/contacts/create', function(){
-    return "<h3>Create Contact </h3>";
-})->name('contact.create');
+    return view('contact.create');
+})->name('contacts.create');
 
 
-Route::get('/contact/{id}', function($id){
-    return App\Contact::find($id);
-})->name('contact.show');
+Route::get('/contacts/{id}', function($id){
+    $contacts = App\Contact::find($id);
+    return view('contact.show', compact('contacts'));
+})->name('contacts.show');
