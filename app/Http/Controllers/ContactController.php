@@ -25,7 +25,7 @@ class ContactController extends Controller
     }
 
     public function show($id){
-        $contacts = Contact::find($id);
-    return view('contact.show', compact('contacts'));
+        $contact = Contact::find($id);
+    return view('contact.show', compact('contact'));
     }
 }
