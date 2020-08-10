@@ -22,4 +22,4 @@
  </main>
  @endsection
  
- @section('title', 'Contact App | Add new contact')
+ 
