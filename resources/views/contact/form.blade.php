@@ -1,19 +1,25 @@
-<div class="row">
+        <div class="row">
                   <div class="col-md-12">
                     <div class="form-group row">
                       <label for="first_name" class="col-md-3 col-form-label">First Name</label>
                       <div class="col-md-9">
-                        <input type="text" name="first_name" id="first_name" class="form-control is-invalid">
+                        <input type="text" name="first_name" value="{{ old('first_name')}}" 
+                        id="first_name" class="form-control is-invalid"
+                        @error('first_name') >
+                        @error('first_name')
                         <div class="invalid-feedback">
-                          Please choose a username.
+                          {{"message"}}
                         </div>
+                        @enderror()
                       </div>
                     </div>
 
                     <div class="form-group row">
                       <label for="last_name" class="col-md-3 col-form-label">Last Name</label>
                       <div class="col-md-9">
-                        <input type="text" name="last_name" id="last_name" class="form-control">
+                        <input type="text" name="last_name" value="{{ old('last_name')}}" 
+                        id="last_name" class="form-control is-invalid"
+                        @error('last_name') >
                       </div>
                     </div>
 
@@ -46,8 +52,6 @@
                            <option value="{{ $id}}">{{$company}}</option>   
                         @endforeach
                         
-                          
- 
                         </select>
                       </div>
                     </div>
