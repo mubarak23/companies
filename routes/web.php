@@ -24,3 +24,4 @@ Route::post('/contacts/store', 'ContactController@store')->name('contacts.store'
 
 
 Route::get('/contacts/{id}', 'ContactController@show')->name('contacts.show');
+Route::get('/contacts/{id}/edit', 'ContactController@edit')->name('contacts.edit');

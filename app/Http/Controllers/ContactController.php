@@ -21,6 +21,7 @@ class ContactController extends Controller
     }
 
     public function create(){
+        $contact = new Contact();
         $companies = Company::orderBy('name')->pluck('name', 'id')->prepend('All Companies', '');
         return view('contact.create', compact('companies'));
     }
@@ -42,4 +43,12 @@ class ContactController extends Controller
            return redirect()->route('contacts.index')->with('message', 'Contact has been added successfully');
                   
     }
+
+   public function edit($id){
+       $contact = Contact::findOrFail($id);
+       $companies = Company::orderBy('name')->pluck('id', 'name')->prepend('All Companies', '');
+       return view('contact.create');
+   } 
+
+
 }
