@@ -13,7 +13,7 @@
               <form action="{{ route('contacts.update', $contact->id) }}" method="POST">
                 @method('PUT')
                 @csrf
-                @include('contacts.form')
+                @include('contact.form')
               </form>
             </div>
           </div>
