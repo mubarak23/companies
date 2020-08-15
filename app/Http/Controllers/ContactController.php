@@ -23,7 +23,7 @@ class ContactController extends Controller
     public function create(){
         $contact = new Contact();
         $companies = Company::orderBy('name')->pluck('name', 'id')->prepend('All Companies', '');
-        return view('contact.create', compact('companies'));
+        return view('contact.create', compact('companies', 'contact'));
     }
 
     public function show($id){
@@ -46,7 +46,7 @@ class ContactController extends Controller
 
    public function edit($id){
        $contact = Contact::findOrFail($id);
-       $companies = Company::orderBy('name')->pluck('id', 'name')->prepend('All Companies', '');
+       $companies = Company::orderBy('name')->pluck('id', 'name');
         
        return view('contact.edit', compact('companies', 'contact'));
    } 

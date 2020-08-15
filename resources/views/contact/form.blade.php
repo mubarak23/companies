@@ -60,21 +60,21 @@
          </div>
        </div>
        <div class="form-group row">
-         <label for="company_id" class="col-md-3 col-form-label">Company</label>
-         <div class="col-md-9">
+        <label for="company_id" class="col-md-3 col-form-label">Company</label>
+        <div class="col-md-9">
           <select name="company_id" id="company_id" class="form-control @error('company_id') is-invalid @enderror">
-             @foreach ($companies as $id => $name)
-
-                <option {{ $id === old('company_id', $contact->company_id) ? 'selected' : '' }} value="{{ $id }}">{{ $name }}</option>
-             @endforeach
-           </select>
-           @error('company_id')
+            @foreach ($companies as $id => $name)
+                <option {{ $id == old('company_id', $contact->company_id) ? 
+                'selected' : '' }} value="{{ $name }}">{{ $id }}</option>
+            @endforeach
+          </select>
+          @error('company_id')
             <div class="invalid-feedback">
                 {{ $message }}
             </div>
-         @enderror
-         </div>
-       </div>
+          @enderror
+        </div>
+      </div>
        <hr>
        <div class="form-group row mb-0">
                       <div class="col-md-9 offset-md-3">
