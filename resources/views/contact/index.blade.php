@@ -30,6 +30,7 @@
                   </tr>
                 </thead>
                 <tbody>
+                @include('layouts.message')
                 @if($contacts->count())
                 @foreach($contacts as $index => $contact)
 
